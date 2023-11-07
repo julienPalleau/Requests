@@ -47,6 +47,31 @@ response = requests.get("https://httpbin.org/status/401")
 
 
 # User agent
-response = requests.get("https://httbin.org/user-agent")
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1"
+# }
+
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1",
+    "Accept": "image/jpeg"
+}
+
+response = requests.get("https://httpbin.org/image", headers=headers)
 print("\n")
-print(response.text)
+with open("myimage.jpg", "wb") as f:
+    f.write(response.content)
+
+import requests
+
+response = requests.get('https://api.github.com/user', auth=('username', 'password'))
+
+print(response.status_code)
+print(response.content)
+
+# Introduce a delay before you stop the request
+response = requests.get("https://httpbin.org/delay/5", timeout=3)
+
+res_json = response.json()
+del res_json['origin']
+print(res_json)
