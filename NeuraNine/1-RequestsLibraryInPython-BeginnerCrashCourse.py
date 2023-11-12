@@ -64,14 +64,23 @@ with open("myimage.jpg", "wb") as f:
 
 import requests
 
-response = requests.get('https://api.github.com/user', auth=('username', 'password'))
+# response = requests.get('https://api.github.com/user', auth=('username', 'password'))
 
-print(response.status_code)
-print(response.content)
+# print(response.status_code)
+# print(response.content)
 
 # Introduce a delay before you stop the request
-response = requests.get("https://httpbin.org/delay/5", timeout=3)
+# response = requests.get("https://httpbin.org/delay/5", timeout=3)
 
-res_json = response.json()
-del res_json['origin']
-print(res_json)
+# res_json = response.json()
+# del res_json['origin']
+# print(res_json)
+
+# Proxy Server, the proxy used below doesn't work anymore.
+proxies = {
+    "http": "108.61.175.7:31802",
+    "https": "108.61.175.7:31802"
+}
+response = requests.get("http://httpbin.org/get", proxies=proxies)
+
+print(response.text)
