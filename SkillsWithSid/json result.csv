@@ -1,0 +1,28 @@
+variable,value
+id,6662
+uid,a2e27b72-9fde-4de9-8540-456413addd7c
+password,3b7YNAvhyB
+first_name,Hoyt
+last_name,Sipes
+username,hoyt.sipes
+email,hoyt.sipes@email.com
+avatar,https://robohash.org/reprehenderitvoluptassunt.png?size=300x300&set=set1
+gender,Non-binary
+phone_number,+967 (687) 191-3331 x431
+social_insurance_number,280412115
+date_of_birth,1978-01-17
+employment.title,Forward Representative
+employment.key_skill,Communication
+address.city,Zboncakland
+address.street_name,Griselda Flat
+address.street_address,2578 Alfonzo Trail
+address.zip_code,20956-3268
+address.state,Wisconsin
+address.country,United States
+address.coordinates.lat,21.907794184723315
+address.coordinates.lng,-32.53401826352757
+credit_card.cc_number,4892168996714
+subscription.plan,Basic
+subscription.status,Pending
+subscription.payment_method,Visa checkout
+subscription.term,Full subscription
