@@ -124,6 +124,7 @@ Les codes les plus courants sont :
     504 : le serveur n'a pas répondu.
     
 more details @: https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP#Codes_d
+more details @: https://developer.mozilla.org/fr/docs/Web/HTTP/Status
 '''
 # r = requests.get('https://httpbin.org/status/505')
 # print(r)
@@ -155,11 +156,11 @@ print(r)
 ##################################
 # 16 - HTTP Basic Authentication #
 ##################################
-from requests.auth import HTTPBasicAuth
-r_wrong = requests.get('https://httpbin.org/basic-auth/user/passwd')
-print(r_wrong)
-r_right = requests.get('https://httpbin.org/basic-auth/user/passwd', auth=HTTPBasicAuth('user', 'passwd'))
-print(r_right)
+# from requests.auth import HTTPBasicAuth
+# r_wrong = requests.get('https://httpbin.org/basic-auth/user/passwd')
+# print(r_wrong)
+# r_right = requests.get('https://httpbin.org/basic-auth/user/passwd', auth=HTTPBasicAuth('user', 'passwd'))
+# print(r_right)
 
 ###################################
 # 17 - Reading API Documentation #
@@ -243,3 +244,20 @@ You can filter the output of your request to include only the specified fields.
 https://restcountries.com/v3.1/{service}?fields={field},{field},{field}
 https://restcountries.com/v3.1/all?fields=name,capital,currencies
 '''
+
+#####################################
+# 19 - Using the REST Countries API #
+#####################################
+# it doesn't work...
+import requests
+
+base_url = 'https://restcountries.eu/rest/v3.1/'
+#
+# r = requests.get(base_url + 'all?fields=name,capital,currencies')
+#
+# json_result = r.json()
+# print(json_result[84]['name'])
+
+fields = {'fields': 'altSpellings;name'}
+r = requests.get(base_url + 'name/can', params=fields)
+print(r.json())
