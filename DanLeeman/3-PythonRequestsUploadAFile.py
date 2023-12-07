@@ -31,6 +31,7 @@ Within the nested tuple, we will include the filename, the file, and the filetyp
 """
 url = 'https://httpbin.org/post'
 # files = {'file': open('USCarBrands.csv', 'rb')}
+# r = requests.post(url, files=files)
 
 files = [('copy1', ('USBCarBrands.csv', open('USCarBrands.csv', 'rb'), 'csv')),
          ('copy2', ('USBCarBrands.csv', open('USCarBrands.csv', 'rb'), 'csv'))

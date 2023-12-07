@@ -19,13 +19,17 @@ events = r.json()
 # Say we want to access the first event in the array. We can add square brackets with the index of 0 to the event object.
 print(f"first event: {events[0]}")
 
+# We can retrieve an id in looking at the first line
+print(f"user id: {events[0]['id']}") # first dictionary
+print(f"user id: {events[0].get('actor').get('id')}") # nested dictionary
+
 """
 Now only the first event is printed to the console.
 We can retrieve the id from this first event by adding another set of squre brackets to the event object with the string 'id'.
 This is will return the id of the first event in the array.
 This is just one example of retrieving specific data from an object created from parsed JSON content.
 """
-print(events[0]['id'])
+# print(events[0]['id'])
 
 """
 We can also send JSON content in a request using the request library.
